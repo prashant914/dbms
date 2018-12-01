@@ -1,0 +1,21 @@
+body{
+	font-family: sans-serif;
+	background-image: linear-gradient(to right bottom, rgba(87, 240, 163, 0.39), rgba(233, 232, 232, 0.774)),url(sky.jpg);
+	background-size: 100% 120%;
+	width: 95%;
+	height: 120vh;
+}
+
+h1{
+	text-align: left;
+	font-weight: bold;
+	color: black;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+p{
+	font-weight: bold;
+}
+
+
+.about

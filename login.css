@@ -1,0 +1,16 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.bgimage{
+	background-image: url('photo.jpg');
+	background-size: 100% 120%;
+	width: 100%;
+	height: 100vh;
+}
+
+#usen:focus{
+	border: 3px solid black;
+	color: white;
+}
