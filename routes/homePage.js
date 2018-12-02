@@ -8,13 +8,15 @@ const router = express.Router();
 
 router.get("/", function (req, res) {
     res.render("homePage", {
-        title: "Welcome User"
+        title: "Welcome User",
+        message : ""
     });
 });
 
 router.post("/", function (req, res) {
     res.render("homePage", {
-        title: "Welcome User"
+        title: "Welcome User",
+        message : "Welcome " + req.body.email
     });
 });
 
