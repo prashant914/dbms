@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        <%= title %>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body style="background-image:url('/images/photo.jpg');background-size:cover">
+    <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+                <li><a href="/homePage/animal">Animals</a></li>
+                <li><a href="/homePage/food">Food</a></li>
+                <li><a href="#">Worker</a></li>
+                <li><a href="/homePage/field">Field</a></li>
+                <li><a href="/homePage/visitor">Visitor</a></li>
+        </ul>
+        <p class="navbar-text">Workers</p>
+    </nav>
+
+    <div class="container">
+        <h3>Details of Workers</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Worker Id</th>
+                    <th scope="col">Date Of Birth</th>
+                </tr>
+            </thead><br>
+            <% for(var i=0; i < worker.length; i++) { %>
+            <tr>
+                <td>
+                    <%= worker[i].name %>
+                </td>
+                <td>
+                    <%= worker[i].worker_id %>
+                </td>
+                <td>
+                    <%= worker[i].d_o_b %>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+    </div>
+</body>
+
+</html>
