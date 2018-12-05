@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body style="background-image:url('/images/photo.jpg');background-size:cover">
+<body style="background-image:url('/images/back.jpg');background-size:cover">
     <nav class="navbar navbar-inverse">
         <ul class="nav navbar-nav">
                 <li><a href="/homePage/animal">Animals</a></li>
@@ -20,6 +20,9 @@
                 <li><a href="#">Worker</a></li>
                 <li><a href="/homePage/field">Field</a></li>
                 <li><a href="/homePage/visitor">Visitor</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li id="login"><a href="/"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
         </ul>
         <p class="navbar-text">Workers</p>
     </nav>
@@ -32,6 +35,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Worker Id</th>
                     <th scope="col">Date Of Birth</th>
+                    <th scope="col">Salary</th>
                 </tr>
             </thead><br>
             <% for(var i=0; i < worker.length; i++) { %>
@@ -44,6 +48,9 @@
                 </td>
                 <td>
                     <%= worker[i].d_o_b %>
+                </td>
+                <td>
+                    <%= worker[i].salary %>
                 </td>
             </tr>
             <% } %>

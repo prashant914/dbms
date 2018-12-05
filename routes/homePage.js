@@ -10,30 +10,30 @@ const router = express.Router();
 router.get("/", function (req, res) {
     res.render("homePage", {
         title: "Welcome User",
-        message : ""
+        message: ""
     });
 });
 
 router.post("/", function (req, res) {
     res.render("homePage", {
         title: "Welcome User",
-        message : "Welcome " + req.body.email
+        message: "Welcome " + req.body.email
     });
 });
 
 router.get("/food", function (req, res, next) {
     var food = foodRepo
-      .getFoodDetails()
-      .then(food => {
-        res.render("food", {
-          title: "Food Details | Wildlife",
-          food : food
+        .getFoodDetails()
+        .then(food => {
+            res.render("food", {
+                title: "Food Details | Wildlife",
+                food: food
+            });
+        })
+        .catch(error => {
+            console.log(error);
         });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  });
+});
 
 router.get("/animal", function (req, res) {
     var animal = animalRepo.animal().then(function (animal) {
@@ -46,29 +46,29 @@ router.get("/animal", function (req, res) {
     });
 });
 
-router.get("/animal/insertAnimals", function(req, res){
+router.get("/animal/insertAnimals", function (req, res) {
     res.render("insertAnimal", {
-        title : "Insert Animals",
-        message : ""
+        title: "Insert Animals",
+        message: ""
     });
 });
 
-router.post("/animal/insertAnimals", function(req, res){
+router.post("/animal/insertAnimals", function (req, res) {
     var person = {
-        id : req.body.animal_id,
-        life : req.body.lifespan,
-        name : req.body.name,
-        type : req.body.type,
-        wid : req.body.worker_id
+        id: req.body.animal_id,
+        life: req.body.lifespan,
+        name: req.body.name,
+        type: req.body.type,
+        wid: req.body.worker_id
     }
-    var sql = "INSERT INTO animal (`animal_id`, `lifespan`, `name`, `type`, `worker_id`)  VALUES ('"+ person.id + "','" + person.life + "','"+ person.name + "','"+ person.type + "','"+ person.wid +"')";
-    con.query(sql, function(err, result, fields){
-        if(err) console.log(err);
+    var sql = "INSERT INTO animal (`animal_id`, `lifespan`, `name`, `type`, `worker_id`)  VALUES ('" + person.id + "','" + person.life + "','" + person.name + "','" + person.type + "','" + person.wid + "')";
+    con.query(sql, function (err, result, fields) {
+        if (err) console.log(err);
         else console.log("Inserted");
     });
     res.render("insertAnimal", {
-        title : "Inserted",
-        message : "Inserted Successfully"
+        title: "Inserted",
+        message: "Inserted Successfully"
     })
 });
 
@@ -103,6 +103,30 @@ router.get("/visitor", function (req, res) {
     }).catch(error => {
         console.log(error);
     });
+});
+
+router.post("/visitor/insertVisitors", function (req, res) {
+    var visitor = {
+        id: req.body.ticket_no,
+        life: req.body.d_o_v,
+        name: req.body.field_id
+    }
+    var sql = "INSERT INTO visitors (`ticket_no`, `d_o_v`, `field_id`)  VALUES ('" + visitor.ticket_no + "','" + visitor.d_o_v + "','" + visitor.field_id + "')";
+    con.query(sql, function (err, result, fields) {
+        if (err) console.log(err);
+        else console.log("Inserted");
+    });
+    res.render("insertVisitors", {
+        title: "Inserted",
+        message: "Inserted Successfully"
+    })
+});
+
+router.get("/visitor/insertVisitors", function (req, res) {
+    res.render("insertVisitors", {
+        title: "Insert Visitors",
+        message: ""
+    })
 });
 
 module.exports = router;

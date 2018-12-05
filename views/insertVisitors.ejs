@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="text-center">Add Visitors From Here</h2>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form action="/homePage/visitor/insertVisitors" method="POST">
+                    <p class="text-center">
+                        <%= message %>
+                    </p>
+                    <div class="form-group">
+                        <label for="">Ticket No</label>
+                        <input type="text" name="ticket_no" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Date Of Visiting</label>
+                        <input type="date" name="d_o_v" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Field ID</label>
+                        <input type="text" name="field_id" class="form-control" required>
+                    </div>
+                    <input type="submit" value="Add Visitors" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel">Terms & Conditions</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam
+                            nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore
+                            possimus ipsa porro delectus quidem dolorem ad.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam
+                            nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore
+                            possimus ipsa porro delectus quidem dolorem ad.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam
+                            nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore
+                            possimus ipsa porro delectus quidem dolorem ad.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam
+                            nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore
+                            possimus ipsa porro delectus quidem dolorem ad.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam
+                            nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore
+                            possimus ipsa porro delectus quidem dolorem ad.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam
+                            nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore
+                            possimus ipsa porro delectus quidem dolorem ad.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique, itaque, modi, aliquam
+                            nostrum at sapiente consequuntur natus odio reiciendis perferendis rem nisi tempore
+                            possimus ipsa porro delectus quidem dolorem ad.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">I Agree</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+    </div>
+</body>
+
+</html>

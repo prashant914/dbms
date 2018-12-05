@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
-<body style="background-image:url('/images/photo.jpg');background-size:cover">
+<body style="background-image:url('/images/back.jpg');background-size:cover">
     <nav class="navbar navbar-inverse">
         <ul class="nav navbar-nav">
                 <li><a href="#">Animals</a></li>
@@ -20,6 +20,9 @@
                 <li><a href="/homePage/worker">Worker</a></li>
                 <li><a href="/homePage/field">Field</a></li>
                 <li><a href="/homePage/visitor">Visitor</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li id="login"><a href="/"><span class="glyphicon glyphicon-log-in"></span> LogOut</a></li>
         </ul>
         <p class="navbar-text">Animal</p>
     </nav>
@@ -39,16 +42,19 @@
             <% for(var i=0; i < animal.length; i++) { %>
             <tr>
                 <td>
-                    <%= animal[i].name %>
+                    <b><%= animal[i].name %></b>
                 </td>
                 <td>
-                    <%= animal[i].animal_id %>
+                    <b><%= animal[i].animal_id %></b>
                 </td>
                 <td>
-                    <%= animal[i].lifespan %>
+                    <b><%= animal[i].lifespan %></b>
                 </td>
                 <td>
-                    <%= animal[i].type %>
+                    <b><%= animal[i].type %></b>
+                </td>
+                <td>
+                    <b><%= animal[i].worker_id %></b>
                 </td>
             </tr>
             <% } %>
