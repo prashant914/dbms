@@ -4,6 +4,7 @@ const animalRepo = require("../repo/animalRepo");
 const workerRepo = require("../repo/workerRepo");
 const fieldRepo = require("../repo/fieldRepo");
 const visitorRepo = require("../repo/visitorRepo");
+const con = require("../connection");
 const router = express.Router();
 
 router.get("/", function (req, res) {
@@ -43,6 +44,32 @@ router.get("/animal", function (req, res) {
     }).catch(error => {
         console.log(error);
     });
+});
+
+router.get("/animal/insertAnimals", function(req, res){
+    res.render("insertAnimal", {
+        title : "Insert Animals",
+        message : ""
+    });
+});
+
+router.post("/animal/insertAnimals", function(req, res){
+    var person = {
+        id : req.body.animal_id,
+        life : req.body.lifespan,
+        name : req.body.name,
+        type : req.body.type,
+        wid : req.body.worker_id
+    }
+    var sql = "INSERT INTO animal (`animal_id`, `lifespan`, `name`, `type`, `worker_id`)  VALUES ('"+ person.id + "','" + person.life + "','"+ person.name + "','"+ person.type + "','"+ person.wid +"')";
+    con.query(sql, function(err, result, fields){
+        if(err) console.log(err);
+        else console.log("Inserted");
+    });
+    res.render("insertAnimal", {
+        title : "Inserted",
+        message : "Inserted Successfully"
+    })
 });
 
 router.get("/worker", function (req, res) {

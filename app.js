@@ -13,6 +13,7 @@ const contactRouter = require("./routes/contact");
 const signUpRouter = require("./routes/signup");
 const loginRouter = require("./routes/login");
 const homePageRouter = require("./routes/homePage");
+const adminRouter = require("./routes/admin");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,6 +33,7 @@ app.use("/contactUs", contactRouter);
 app.use("/signup", signUpRouter);
 app.use("/login", loginRouter);
 app.use("/homePage", homePageRouter);
+app.use("/admin", adminRouter);  
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
